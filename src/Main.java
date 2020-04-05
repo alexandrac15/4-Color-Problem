@@ -9,10 +9,11 @@ public class Main {
     public static void main(String[] args) {
 
 
-        List<List<Integer>> graph= GraphConfigurations.shape2();
+        List<List<Integer>> graph= GraphConfigurations.shape8();
 
-        State initialState = new State(graph.size()); //default state with uncolored nodes;
-        GraphProblem graphProblem = new GraphProblem(graph, initialState);
+        State initialState= new State(graph.size());
+
+        GraphProblem graphProblem=new GraphProblem(graph,initialState);
 
         State resultDFS = graphProblem.graphSearchDFS();
         State resultBFS = graphProblem.graphSearchBFS();
@@ -22,15 +23,12 @@ public class Main {
 
         System.out.println("DFS: ");
         resultDFS.print();
-       // resultA.printPathOfStates();
         System.out.println("BFS: ");
         resultBFS.print();
         System.out.println("Dijkstra: ");
         resultDijkstra.print();
         System.out.println("A*: ");
         resultA.print();
-
-
 
     }
 }

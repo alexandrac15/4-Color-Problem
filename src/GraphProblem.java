@@ -24,6 +24,9 @@ public class GraphProblem {
             for (int j = 0; j < graph.get(i).size(); j++) {
 
                 if (colorOfFirstNode.equals(state.currenMapping.get(graph.get(i).get(j)))) {
+                    //modifica nodul mare
+                   // state.setProblemNode(i);
+                    //inainte
                     state.setProblemNode(graph.get(i).get(j));
                     return false;
                 }
@@ -58,7 +61,7 @@ public class GraphProblem {
         }
         if (!currentColor.equals("YELLOW")) {
             State newState4 = new State(state.getCurrenMapping(), state.getProblemNode(), state.getPathOfStates());
-            newState4.currenMapping.put(state.getProblemNode(), "RED");//modifica culoarea
+            newState4.currenMapping.put(state.getProblemNode(), "YELLOW");//modifica culoarea
             newState4.pathOfStates.add(state.getCurrenMapping());//adauga stateul
             potentialSolutions.add(newState4);
         }
@@ -97,7 +100,11 @@ public class GraphProblem {
         }
 
 
-        System.out.println("EXPLORED: "+explored.size());
+//        System.out.println("EXPLORED: "+explored.size());
+//        System.out.println("Last state  and its path dfs:");
+//        explored.get(explored.size()-1).print();
+//        explored.get(explored.size()-1).printPathOfStates();
+
         State nothing = new State(new HashMap<Integer, String>(), -1, new ArrayList<Map<Integer, String>>());
 
         return nothing;  //map is empty, node = -1;
@@ -134,7 +141,7 @@ public class GraphProblem {
                 }
             }
         }
-
+       // System.out.println("EXPLORED BFS: "+explored.size());
         State nothing = new State(new HashMap<Integer, String>(), -1, new ArrayList<Map<Integer, String>>());
 
         return nothing;  //map is empty, node = -1;
@@ -190,7 +197,8 @@ public class GraphProblem {
 
         //compute the distance:
         int distance=state.pathOfStates.size();
-        int h = distance +heuristic;
+        //int h = distance +heuristic;
+        int h = heuristic;
 
 
         return h;
@@ -226,7 +234,7 @@ public class GraphProblem {
                 }
             }
         }
-
+      //  System.out.println("EXPLORED:  A*"+explored.size());
         State nothing = new State(new HashMap<Integer, String>(), -1, new ArrayList<Map<Integer, String>>());
 
         return nothing;  //map is empty, node = -1;

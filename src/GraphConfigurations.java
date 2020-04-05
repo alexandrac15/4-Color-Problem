@@ -65,7 +65,7 @@ public class GraphConfigurations {
         return graph;
     }
 
-    public static List<List<Integer>> shapeNo1() {
+    public static List<List<Integer>> shape5() {
         List<Integer> ar0 = new ArrayList<>(Arrays.asList(1,2,3,6,7,8));
         List<Integer> ar1 = new ArrayList<>(Arrays.asList(2,0,8));
         List<Integer> ar2 = new ArrayList<>(Arrays.asList(1,0,3,4));
@@ -81,7 +81,7 @@ public class GraphConfigurations {
         return graph;
 
     }
-    public static List<List<Integer>> shapeNo2() {
+    public static List<List<Integer>> shape6() {
         //am corectat nodurile
         List<Integer> ar0 = new ArrayList<>(Arrays.asList(1,2,3));
         List<Integer> ar1 = new ArrayList<>(Arrays.asList(2,4,5,0));
@@ -97,7 +97,7 @@ public class GraphConfigurations {
         return graph;
 
     }
-    public static List<List<Integer>> shapeNo3() {
+    public static List<List<Integer>> shape7() {
 
 
 
@@ -118,7 +118,7 @@ public class GraphConfigurations {
         return graph;
 
     }
-    public static List<List<Integer>> shapeNo4() {
+    public static List<List<Integer>> shape8() {
 
 
 
